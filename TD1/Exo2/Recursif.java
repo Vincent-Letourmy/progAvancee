@@ -50,4 +50,49 @@ public class Recursif {
     static boolean estPal(char[]t){
         return estPalAux(t,0);
     }
+
+    static boolean estCroissantAux(int[]t,int i){
+        if (i>t.length-2){
+            return true;
+        }
+        else if(t[i]>t[i+1]) {
+            return false;
+        }
+        else{
+            return (estCroissantAux(t,i+1));
+        }
+    }
+
+    static boolean estCroissant(int[]t){
+        return estCroissantAux(t,0);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
