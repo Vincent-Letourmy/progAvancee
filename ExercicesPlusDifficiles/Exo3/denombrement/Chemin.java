@@ -11,8 +11,9 @@ public class Chemin {
         }
     }
 
-    static int cheminBis(int x){
-        return 0;
+    static double cheminBis(int x){
+
+        return (Recursif.factorielle(2*(x-1))/ Recursif.puiss(Recursif.factorielle(x-1),2));
 
 
     }
