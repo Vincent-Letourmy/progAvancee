@@ -14,6 +14,4 @@ public class PGCD {
             return PGCD(b,r);
         }
     }
-
-
 }
