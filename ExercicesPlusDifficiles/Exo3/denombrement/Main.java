@@ -10,7 +10,7 @@ public class Main {
         int n = sc.nextInt();
 
         System.out.println(Chemin.cheminBis(n));
-        System.out.println(Chemin.chemin(n,n));
+        //System.out.println(Chemin.chemin(n,n));
 
     }
 }
