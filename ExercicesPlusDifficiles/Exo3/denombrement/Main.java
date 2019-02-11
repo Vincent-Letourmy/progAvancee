@@ -9,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        System.out.println(Chemin.cheminBis(n));
+        System.out.println(Chemin.cheminThibault(n));
         //System.out.println(Chemin.chemin(n,n));
 
     }

@@ -17,4 +17,17 @@ public class Chemin {
 
 
     }
+
+    static double cheminThibault(double n){
+        if (n==0 || n==-1){
+            return 1;
+        }
+        if(n>0){
+            return -(cheminThibault(2*-(n-1))) / (-(n-1) * -(n-1) * cheminThibault(-n +2)*cheminThibault(-n +2));
+        }
+        else{
+            return n * cheminThibault(n+1);
+        }
+
+    }
 }
