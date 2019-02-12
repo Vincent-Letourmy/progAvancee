@@ -15,7 +15,6 @@ public class Chemin {
 
         return (Recursif.factorielle(2*(x-1))/ Recursif.puiss(Recursif.factorielle(x-1),2));
 
-
     }
 
     static double cheminThibault(double n){
@@ -28,6 +27,5 @@ public class Chemin {
         else{
             return n * cheminThibault(n+1);
         }
-
     }
 }
