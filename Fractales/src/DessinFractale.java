@@ -99,33 +99,30 @@ class DessinFractale{
 		}
 	}
 
-	/*public void dragon(double l, int n, int gauche){
+	public void dragonAux(double l, int n, int virage){
     	if(n==0){
     		bob.forward(l);
 		}
-    	else if(n==1){
-    		dragon(l,n-1,gauche);
-    		if(gauche==0) {
+    	else {
+    		dragonAux(l,n-1,0);
+    		if(virage==0) {
 				bob.left(90);
 			}
     		else{
     			bob.right(90);
 			}
-    		dragon(l,n-1,gauche);
+    		dragonAux(l,n-1,1);
 		}
-    	else if(n==2) {
-				dragon(l, n - 1,0);
-				bob.left(90);
-				dragon(l, n - 2);
-				bob.right(90);
-				dragon(l, n - 2);
-		}
-	}*/
+	}
+
+	public void dragon(double l, int n){
+    	dragonAux(l,n,0);
+	}
 
     public static void main(String[] args){
-	DessinFractale d = new DessinFractale(150);
+	DessinFractale d = new DessinFractale(1);
 
-	//d.dragon(100,1,0);
+	d.dragon(100,20);
 
 	/*d.carre(90);
 	d.reset();
