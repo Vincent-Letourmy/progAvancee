@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Fractales/Fractales.iml" filepath="$PROJECT_DIR$/Fractales/Fractales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/Fractales/Fractales.iml" filepath="$PROJECT_DIR$/java/Fractales/Fractales.iml" />
       <module fileurl="file://$PROJECT_DIR$/progAvancee.iml" filepath="$PROJECT_DIR$/progAvancee.iml" />
     </modules>
   </component>
