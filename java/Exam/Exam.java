@@ -47,6 +47,30 @@ public class Exam {
         }
     }
 
+    private static int nbMon (int n, int[]t, int i){
+        int res = 0;
+        if (i == 1){
+
+            while (res <= n) res += t[2];
+            res -= t[2];
+            while (res <= n) res += t[1];
+            res -= t[1];
+            while (res <= n) res += t[0];
+            res -= t[0];
+            if (res == n) return 1;
+        }
+
+        int[]t1 = {t[0],t[1]};
+        int[]t2 = {t[1],t[2]};
+        int[]t3 = {t[0],t[2]};
+        int[]t4 = {t[0]};
+        int[]t5 = {t[1]};
+        int[]t6 = {t[2]};
+        return nbMon(n,t,1) + nbMon(n-t[2],t1,1) + nbMon(n - t[0],t2,1) + nbMon(n - t[1],t3,1) + nbMon(n - t[1] - t[2],t4,1)
+                + nbMon(n - t[0] - t[2],t5,1) + nbMon(n - t[0] - t[1],t6,1);
+
+    }
+
     public static void main(String[] args) {
         System.out.println(multiplie(9,9));
 
