@@ -8,7 +8,7 @@ public class Fusion {
         return tabRes;
     }
 
-    static void fusionTabTriesAux(int[] t1, int i1, int[] t2, int i2, int[] tabRes, int iRes) {
+    /*static void fusionTabTriesAux(int[] t1, int i1, int[] t2, int i2, int[] tabRes, int iRes) {
         if (iRes < tabRes.length -1) {
             {
                 if (i1>t1.length-1) {
@@ -35,7 +35,33 @@ public class Fusion {
         else{
             tabRes[tabRes.length-1]=t1[t1.length-1];
         }
+    }*/
+
+    public static void fusionTabTriesAux(int[] t1, int i1, int[] t2, int i2, int[] tRes, int iRes) {
+
+        if (iRes<tRes.length) {
+            if (i1 < t1.length && i2 < t2.length) {
+                if (t1[i1] < t2[i2]) {
+                    tRes[iRes] = t1[i1];
+                    fusionTabTriesAux(t1, i1 + 1, t2, i2, tRes, iRes + 1);
+                } else {
+                    tRes[iRes] = t2[i2];
+                    fusionTabTriesAux(t1, i1, t2, i2 + 1, tRes, iRes + 1);
+                }
+            } else {
+                if (i1 == t1.length) {
+                    tRes[iRes] = t2[i2];
+                    fusionTabTriesAux(t1, i1, t2, i2 + 1, tRes, iRes + 1);
+                }
+
+                if (i2 == t2.length) {
+                    tRes[iRes] = t1[i1];
+                    fusionTabTriesAux(t1, i1 + 1, t2, i2, tRes, iRes + 1);
+                }
+            }
+        }
     }
+
 
     static void afficheTab(int[]t){
         for (int i=0;i<t.length;i++){

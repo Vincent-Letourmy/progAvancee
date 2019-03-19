@@ -30,7 +30,7 @@ public class Cours {
         return sautPuce(n - 1) + sautPuce(n - 2);
     }
 
-   static void triInserAux(int[] t, int i) {
+    static void triInserAux(int[] t, int i) {
         if (i >= t.length) {
         } else {
             triInserAux(t, i + 1);
