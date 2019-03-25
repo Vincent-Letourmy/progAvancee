@@ -48,17 +48,22 @@ public class Divide {
 
     static void quickSort(int[]t, int i,int j){
 
-
+        if (i!=j){
+            int p = pivot(t,i,j-1);
+            quickSort(t,i,p-1);
+            quickSort(t,p+1,j);
+        }
 
     }
 
     public static void main(String[] args) {
 
-        System.out.println(puiss(2,5));
-        System.out.println(puissRapideAux(2,5));
+        //System.out.println(puiss(2,5));
+        //System.out.println(puissRapideAux(2,5));
 
         int[]t = {2,10,4,9,1,6};
-        System.out.println(pivot(t,0,5));
+
+        quickSort(t,0,6);
         System.out.println(Arrays.toString(t));
     }
 }
