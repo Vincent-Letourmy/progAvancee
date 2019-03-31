@@ -28,7 +28,7 @@ public class Divide {
 
         int[]tRes = new int[t.length];
         int p = t[j];
-        int c1 = 0;
+        int c1 = i;
         int c2 = j;
         for (int k = i; k <= j; k++) {
             if (t[k]>p){
@@ -43,17 +43,25 @@ public class Divide {
         for (int k = i; k <= j; k++) {
             t[k]=tRes[k];
         }
-        return c1;
+        return c2;
     }
 
-    static void quickSort(int[]t, int i,int j){
+    static void quickSortAux(int[]t, int i,int j){
 
-        if (i!=j){
-            int p = pivot(t,i,j-1);
-            quickSort(t,i,p-1);
-            quickSort(t,p+1,j);
+        if (i>=j);
+        else {
+            int p = pivot(t, i, j);
+            //System.out.println(Arrays.toString(t));
+            if (p - i > 1)
+                quickSortAux(t, i, p - 1);
+            else if (j != t.length - 1)
+                quickSortAux(t, j, t.length - 1);
+            else ;
         }
+    }
 
+    static void quickSort(int[]t){
+        quickSortAux(t,0,t.length-1);
     }
 
     public static void main(String[] args) {
@@ -61,9 +69,11 @@ public class Divide {
         //System.out.println(puiss(2,5));
         //System.out.println(puissRapideAux(2,5));
 
-        int[]t = {2,10,4,9,1,6};
+        int[]t = {30,2,10,4,9,1,6,11,15,5,7};
+        //int[]t = {3};
 
-        quickSort(t,0,6);
+        //System.out.println(pivot(t,0,5));
+        quickSort(t);
         System.out.println(Arrays.toString(t));
     }
 }
