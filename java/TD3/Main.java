@@ -14,14 +14,19 @@ public class Main {
         l2.setSuiv(l3);
         l3.setSuiv(Def);
 
-        Def.ajoutTete(6);
-        Def.ajoutTete(5);
-        Def.ajoutTete(7);
-        Def.ajoutFin(9);
-        Def.ajoutTete(4);
+        Liste lbis = new Liste();
+        Liste lbis2 = new Liste();
 
-        System.out.println(Def.longueur());
-        System.out.println(Def);
+        lbis.setVal(12);
+        lbis2.setVal(15);
+
+        lbis.setSuiv(lbis2);
+        lbis2.setSuiv(Def);
+
+        Liste copie = l1.ajoutFin2(65);
+        l1.setVal(25);
+        System.out.println(l1);
+        System.out.println(copie);
 
         //System.out.println(l1.longueur());
         //System.out.println(l1.recherche(3));

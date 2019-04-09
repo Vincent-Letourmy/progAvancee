@@ -86,4 +86,48 @@ class Liste{
             return res + suiv.toString();
         }
     }
+
+    void concat(Liste l){
+        if (this.suiv.estVide()){
+            setSuiv(l);
+        }
+        else suiv.concat(l);
+    }
+
+    Liste copie (){
+        Liste res = new Liste();
+        if (this.estVide()){
+            return res;
+        }
+        res = suiv.copie();
+        Liste res2 = new Liste();
+        res2.setVal(val);
+        res2.setSuiv(res);
+        return res2;
+    }
+
+    int get(int i){
+        if (i == 0){
+            return val;
+        }
+        else{
+            return suiv.get(i - 1);
+        }
+    }
+
+    Liste ajoutFin2(int x){
+
+        if (this.estVide()){
+            Liste aux = new Liste();
+            aux.ajoutTete(x);
+            return aux;
+        }
+        Liste res = suiv.ajoutFin2(x);
+
+        Liste res2 = new Liste();
+        res2.setVal(val);
+        res2.setSuiv(res);
+        return res2;
+    }
+
 }
