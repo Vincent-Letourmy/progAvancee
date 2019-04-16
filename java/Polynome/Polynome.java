@@ -2,7 +2,8 @@ package Polynome;
 
 class Polynome{
     private int coeff;
-    private int deg; //deg >= 0
+    private int deg
+            ; //deg >= 0
     private Polynome suiv;
     //represente le monosme coeff∗x^{deg}
 //suiv==null represente le polynome nul
