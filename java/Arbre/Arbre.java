@@ -83,7 +83,7 @@ public class Arbre {
     }
 
     int meilleurChemin(){
-        if (estVide()) return Integer.MAX_VALUE;
+        if (estVide()) return 0;
         else return 0;
     }
 

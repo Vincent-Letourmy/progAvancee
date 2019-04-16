@@ -13,5 +13,6 @@ public class MainArbre {
 
         System.out.println(A3.pereFilsEgaux());
         //System.out.println(Sym);
+
     }
 }
