@@ -1,5 +1,7 @@
 package Arbre;
 
+import static java.lang.Math.min;
+
 public class Arbre {
 
     private int valeur;
@@ -43,6 +45,8 @@ public class Arbre {
         return (arbreDroite.estVide() && arbreGauche.estVide());
     }
 
+    boolean estUnNoeud(){ return !estUneFeuille(); }
+
     int nbNoeuds(){
         if (this.estVide()) return 0;
         else return 1 + arbreDroite.nbNoeuds() + arbreGauche.nbNoeuds();
@@ -84,7 +88,27 @@ public class Arbre {
 
     int meilleurChemin(){
         if (estVide()) return 0;
-        else return 0;
+        else {
+            return min(arbreDroite.meilleurChemin() + valeur , arbreGauche.meilleurChemin() + valeur);
+        }
     }
 
+    boolean chercheFeuille(int x){
+        if(estUneFeuille()){
+            return valeur == x;
+        }
+        else {
+            return (arbreGauche.chercheFeuille(x) || arbreDroite.chercheFeuille(x));
+        }
+    }
+
+    boolean chercheNoeudInterne(int x){
+        if (estUneFeuille()) return false;
+        else {
+            if(valeur == x) return true;
+            else {
+                return arbreDroite.chercheNoeudInterne(x) || arbreGauche.chercheNoeudInterne(x);
+            }
+        }
+    }
 }
