@@ -1,3 +1,5 @@
+package Exams;
+
 import java.util.Arrays;
 
 public class Exam {

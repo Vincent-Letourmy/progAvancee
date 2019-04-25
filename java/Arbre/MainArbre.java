@@ -12,8 +12,6 @@ public class MainArbre {
         Arbre A21 = new Arbre(7,A22,A23);
         Arbre A3 = new Arbre(3,A2,A21);
 
-        //Arbre Sym = A3.symetrise();
-
         System.out.println(A3);
         System.out.println(A3.chercheNoeudInterne(7));
 
