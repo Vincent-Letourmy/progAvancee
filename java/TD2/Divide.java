@@ -56,7 +56,6 @@ public class Divide {
                 quickSortAux(t, i, p - 1);
             else if (j != t.length - 1)
                 quickSortAux(t, j, t.length - 1);
-            else ;
         }
     }
 
