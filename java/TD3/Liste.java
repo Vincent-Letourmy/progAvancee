@@ -130,4 +130,38 @@ class Liste{
         return res2;
     }
 
+    Liste fusion(Liste l){
+        Liste courant = new Liste();
+        if (estVide() && l.estVide()) return courant;
+        else if (estVide()){
+            courant.val = l.val;
+            courant.suiv = fusion(l.suiv);
+            return courant;
+        }
+        else if (l.estVide()){
+            courant.val = val;
+            courant.suiv = suiv.fusion(l);
+            return courant;
+        }
+        else if (Math.min(val,l.val) == val){
+            courant.val = val;
+            courant.suiv = suiv.fusion(l);
+            return courant;
+        }
+        else{
+            courant.val = l.val;
+            courant.suiv = fusion(l.suiv);
+            return courant;
+        }
+    }
+
+    void insereDansTriee(int x){
+        if (estVide()){
+            ajoutTete(x);
+        }
+        else{
+            if (x < val) ajoutTete(x);
+            else suiv.insereDansTriee(x);
+        }
+    }
 }

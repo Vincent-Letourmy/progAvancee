@@ -5,6 +5,7 @@ public class Main {
         Liste l2 = new Liste();
         Liste l3 = new Liste();
         Liste Def = new Liste();
+        Liste Def2 = new Liste();
 
         l1.setVal(2);
         l2.setVal(5);
@@ -17,16 +18,17 @@ public class Main {
         Liste lbis = new Liste();
         Liste lbis2 = new Liste();
 
-        lbis.setVal(12);
-        lbis2.setVal(15);
+        lbis.setVal(4);
+        lbis2.setVal(7);
 
         lbis.setSuiv(lbis2);
-        lbis2.setSuiv(Def);
+        lbis2.setSuiv(Def2);
 
-        Liste copie = l1.ajoutFin2(65);
-        l1.setVal(25);
+        l1.insereDansTriee(8);
+
         System.out.println(l1);
-        System.out.println(copie);
+        System.out.println(lbis);
+        System.out.println(l1.fusion(lbis));
 
         //System.out.println(l1.longueur());
         //System.out.println(l1.recherche(3));
