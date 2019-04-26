@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,11 +26,10 @@ public class Main {
         lbis.setSuiv(lbis2);
         lbis2.setSuiv(Def2);
 
-        l1.insereDansTriee(8);
+        l1.insereDansTriee(5);
 
         System.out.println(l1);
-        System.out.println(lbis);
-        System.out.println(l1.fusion(lbis));
+        System.out.println(l1.fusionneOccsConsec());
 
         //System.out.println(l1.longueur());
         //System.out.println(l1.recherche(3));

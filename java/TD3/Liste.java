@@ -164,4 +164,30 @@ class Liste{
             else suiv.insereDansTriee(x);
         }
     }
+
+    boolean sommeSup(int x) {
+        if (suiv.estVide()) {
+            return x - val < 0;
+        }
+        else {
+            return suiv.sommeSup(x - val);
+        }
+    }
+
+    public Liste fusionneOccsConsec(){
+        Liste aux = new Liste();
+        if (estVide()) return aux;
+        else  {
+            if (val == suiv.val){
+                aux = suiv.fusionneOccsConsec();
+                return aux;
+            }
+            else {
+                aux.val = val;
+                aux.suiv = suiv.fusionneOccsConsec();
+                return aux;
+            }
+        }
+    }
+
 }
