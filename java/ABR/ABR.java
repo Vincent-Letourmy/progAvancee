@@ -66,4 +66,8 @@ public class ABR {
         else if ( x <= valeur) arbreGauche.insert(x);
         else arbreDroite.insert(x);
     }
+
+    void suppr(int x){
+
+    }
 }
