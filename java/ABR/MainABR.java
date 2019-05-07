@@ -10,11 +10,11 @@ public class MainABR {
 
         ABR arbre = new ABR(18, aVide1, aVide2);
 
-        int[]tab = {24,1,28,6,22,7,17,21,4,12,15,38};
+        int[]tab = {24,38,28,6,22,7,17,21,4,12,15,1};
         arbre.insertTabInt(tab);
 
         System.out.println(arbre);
-        arbre.suppr(24);
+        arbre.suppr(17);
         System.out.println(arbre);
 
     }

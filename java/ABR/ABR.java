@@ -72,9 +72,17 @@ public class ABR {
             insert(value);
     }
 
-    void insertTabString(String[]tab){
+    /*void insertTabString(String[]tab){
         for (String value : tab)
             insert(Integer.parseInt(value));
+    }*/
+
+    int insertRec(String[]tab,int i){  // Exactement pareil que le foreach
+        if (i == tab.length) return i;
+        else {
+            insert(Integer.parseInt(tab[i]));
+            return insertRec(tab,i+1);
+        }
     }
 
     void suppr(int x){
@@ -87,7 +95,7 @@ public class ABR {
                 valeur = arbreDroite.valeur;
                 arbreGauche = arbreDroite.arbreGauche;
                 arbreDroite = arbreDroite.arbreDroite;
-                insertTabString(aux.toStringTrie().split(","));
+                insertRec(aux.toStringTrie().split(","),0);
             }
             else {
                 valeur = arbreDroite.valeur;
