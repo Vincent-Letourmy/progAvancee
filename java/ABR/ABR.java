@@ -44,4 +44,26 @@ public class ABR {
         else if (valeur < x) return arbreDroite.recherche(x);
         else return arbreGauche.recherche(x);
     }
+
+    String toStringTrie() {
+        String res = "";
+        if (estVide())
+            res += "";
+        else{
+            res += "" + arbreGauche.toStringTrie();
+            res += "" + valeur + " ";
+            res += "" + arbreDroite.toStringTrie();
+        }
+        return res;
+    }
+
+    void insert(int x){
+        if (estVide()) {
+            valeur = x;
+            arbreDroite = new ABR();
+            arbreGauche = new ABR();
+        }
+        else if ( x <= valeur) arbreGauche.insert(x);
+        else arbreDroite.insert(x);
+    }
 }
