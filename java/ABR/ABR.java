@@ -51,7 +51,7 @@ public class ABR {
             res += "";
         else{
             res += "" + arbreGauche.toStringTrie();
-            res += "" + valeur + " ";
+            res += "" + valeur + ",";
             res += "" + arbreDroite.toStringTrie();
         }
         return res;
@@ -67,7 +67,33 @@ public class ABR {
         else arbreDroite.insert(x);
     }
 
-    void suppr(int x){
+    void insertTabInt(int[]tab){
+        for (int value : tab)
+            insert(value);
+    }
 
+    void insertTabString(String[]tab){
+        for (String value : tab)
+            insert(Integer.parseInt(value));
+    }
+
+    void suppr(int x){
+        if (estVide());
+        else if (x < valeur) arbreGauche.suppr(x);
+        else if (x > valeur) arbreDroite.suppr(x);
+        else{
+            if (!arbreGauche.estVide()) {
+                ABR aux = arbreGauche;
+                valeur = arbreDroite.valeur;
+                arbreGauche = arbreDroite.arbreGauche;
+                arbreDroite = arbreDroite.arbreDroite;
+                insertTabString(aux.toStringTrie().split(","));
+            }
+            else {
+                valeur = arbreDroite.valeur;
+                arbreGauche = arbreDroite.arbreGauche;
+                arbreDroite = arbreDroite.arbreDroite;
+            }
+        }
     }
 }

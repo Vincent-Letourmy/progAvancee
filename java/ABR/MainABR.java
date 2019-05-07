@@ -1,6 +1,5 @@
 package ABR;
 
-
 public class MainABR {
 
     public static void main(String[] args) {
@@ -16,18 +15,21 @@ public class MainABR {
         ABR Avide8 = new ABR();
         ABR Avide9 = new ABR();
         ABR A1 = new ABR(1, Avide, Avide);
-        ABR A11 = new ABR(9, Avide5, Avide6);
-        ABR A2 = new ABR(3, Avide2, Avide3);
         ABR A22 = new ABR(66, Avide, Avide);
         ABR A23 = new ABR(44, Avide, Avide);
-        ABR A21 = new ABR(11, A11, Avide4);
-        ABR A3 = new ABR(5, A2, A21);
+
+        /*ABR A2 = new ABR(3, Avide2, Avide3);
+        ABR A11 = new ABR(9, Avide5, Avide6);
+        ABR A21 = new ABR(11, A11, Avide4);*/
+        ABR A3 = new ABR(18, Avide8, Avide9);
+
+        int[]tab = {24,1,28,6,22,7,17,21,4,12,15,38};
+        A3.insertTabInt(tab);
 
         System.out.println(A3);
-        System.out.println(A3.recherche(9));
-        System.out.println(A3.toStringTrie());
-        A3.insert(5);
+        A3.suppr(24);
         System.out.println(A3);
 
     }
+
 }
