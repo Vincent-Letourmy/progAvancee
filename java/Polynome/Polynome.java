@@ -116,8 +116,7 @@ class Polynome{
         Polynome aux = new Polynome();
         if (estVide()) return aux;
         else {
-            Polynome aux2;
-            aux2 = suiv.reduire();
+            Polynome aux2 = suiv.reduire();
             if (!suiv.estVide() && aux2.memedegre(deg)) {
                 Polynome memeDegre = aux2.getMemeDegree(deg);
                 memeDegre.coeff = coeff + memeDegre.coeff;
