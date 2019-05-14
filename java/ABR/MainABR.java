@@ -14,8 +14,9 @@ public class MainABR {
         arbre.insertTabInt(tab);
 
         System.out.println(arbre);
-        arbre.suppr(17);
+        arbre.suppr(12);
         System.out.println(arbre);
+        System.out.println(arbre.valeurMaxABR());
 
     }
 

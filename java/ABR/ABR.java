@@ -85,10 +85,10 @@ public class ABR {
         }
     }
 
-    void suppr(int x){
+    void supprbis(int x){
         if (estVide());
-        else if (x < valeur) arbreGauche.suppr(x);
-        else if (x > valeur) arbreDroite.suppr(x);
+        else if (x < valeur) arbreGauche.supprbis(x);
+        else if (x > valeur) arbreDroite.supprbis(x);
         else{
             if (!arbreGauche.estVide()) {
                 ABR aux = arbreGauche;
@@ -102,6 +102,39 @@ public class ABR {
                 arbreGauche = arbreDroite.arbreGauche;
                 arbreDroite = arbreDroite.arbreDroite;
             }
+        }
+    }
+
+    int valeurMaxABR (){
+        if (estVide())
+            return 0;
+        else if (arbreDroite.estVide()){
+            return valeur;
+        }
+        else
+            return arbreDroite.valeurMaxABR();
+    }
+
+    void suppr (int x){
+
+        if (estVide());
+        else if (x < valeur) arbreGauche.suppr(x);
+        else if (x > valeur) arbreDroite.suppr(x);
+
+        else if (arbreGauche.estVide() && arbreDroite.estVide()) {
+            arbreGauche = null;
+            arbreDroite = null;
+        }
+
+        else if (!arbreGauche.estVide()) {
+            valeur = arbreGauche.valeurMaxABR();
+            arbreGauche.suppr(valeur);
+        }
+
+        else {
+            valeur = arbreDroite.valeur;
+            arbreGauche = arbreDroite.arbreGauche;
+            arbreDroite = arbreDroite.arbreDroite;
         }
     }
 }

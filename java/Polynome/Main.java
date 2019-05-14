@@ -19,19 +19,20 @@ public class Main {
         Polynome pBisVide = new Polynome();
 
         polynome.setValeurs(2,2,p2);
-        p2.setValeurs(3,1,pVide);
-        //p3.setValeurs(1,1,p4);
-        //p4.setValeurs(1,2,pVide);
+        p2.setValeurs(0,5,p3);
+        p3.setValeurs(1,1,p4);
+        p4.setValeurs(1,2,pVide);
 
         polynomeBis.setValeurs(3,1,pBis2);
         pBis2.setValeurs(2,0,pBisVide);
         //pBis3.setValeurs(2,1,pBisVide);
 
         System.out.println(polynome);
+        System.out.println(polynome.simplifie());
         System.out.println(polynomeBis);
 
-        Polynome multiplication = polynome.multiplier(polynomeBis);
-        System.out.println(multiplication);
+        //Polynome multiplication = polynome.multiplier(polynomeBis);
+        //System.out.println(multiplication);
 
 
 

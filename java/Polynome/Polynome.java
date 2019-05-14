@@ -59,8 +59,17 @@ class Polynome{
     }
 
     int degre(){
-        if (suiv.estVide()) return deg;
-        return Math.max(deg,suiv.degre());
+        if (estVide()) return 0;
+
+        if (suiv.estVide())
+                if (coeff != 0)
+                    return deg;
+                else return 0;
+
+        if (coeff != 0){
+            return Math.max(deg,suiv.degre());
+        }
+        return suiv.degre();
     }
 
     Polynome simplifie(){
